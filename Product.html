@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iphone WEBSITE</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+      defer
+    ></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              inter: ["Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .page-btn {
+        padding: 8px 16px;
+        border: 1px solid black;
+        border-radius: 6px;
+        margin-bottom: 5px;
+      }
+      .page-btn:hover {
+        background: black;
+        color: white;
+      }
+      .active {
+        background: black;
+        color: white;
+      }
+    </style>
+  </head>
+  <body class="font-[inter] w-[514px] md:w-[1200px]">
+    <div
+      class="flex justify-between items-center md:px-32 px-4 p-5 border-b shadow-lg"
+      x-data="{ open: false }"
+    >
+      <!-- Logo + Search -->
+      <div class="flex gap-2">
+        <img src="/image/Logo.png" class="w-[50px] mr-5 h-[40px]" alt="Logo" />
+        <div class="hidden md:flex">
+          <input
+            type="search"
+            class="border md:pl-2 md:w-[280px] rounded-lg mt-2 bg-slate-100 md:h-[30px]"
+            placeholder="Search"
+          />
+        </div>
+      </div>
+
+      <!-- Desktop Menu -->
+      <nav class="hidden md:flex gap-5 list-none font-semibold text-slate-400">
+        <li class="hover:text-black cursor-pointer">Home</li>
+        <li class="hover:text-black cursor-pointer">About</li>
+        <li class="hover:text-black cursor-pointer">Contact Us</li>
+        <li class="hover:text-black cursor-pointer">Blog</li>
+      </nav>
+
+      <!-- Icons + Mobile Hamburger -->
+      <div class="flex items-center gap-2">
+        <i class="fa-solid fa-heart mr-2 hidden md:inline"></i>
+        <i class="fa-solid fa-cart-shopping mr-2 hidden md:inline"></i>
+        <i class="fa-solid fa-user hidden md:inline"></i>
+
+        <!-- Hamburger Button for Mobile -->
+        <button @click="open = !open" class="md:hidden focus:outline-none">
+          <i class="fa-solid fa-bars text-5xl"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Dropdown Menu -->
+      <div
+        x-show="open"
+        @click.away="open = false"
+        class="absolute top-[60px] right-4 bg-white font-semibold text-slate-400 list-none border rounded shadow-md w-40 flex flex-col gap-2 p-3 md:hidden"
+      >
+        <li class="hover:text-black cursor-pointer">Home</li>
+        <li class="hover:text-black cursor-pointer">About</li>
+        <li class="hover:text-black cursor-pointer">Contact Us</li>
+        <li class="hover:text-black cursor-pointer">Blog</li>
+        <!-- Optional icons in mobile menu -->
+        <div class="flex gap-3 mt-2">
+          <i class="fa-solid fa-heart"></i>
+          <i class="fa-solid fa-cart-shopping"></i>
+          <i class="fa-solid fa-user"></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex gap-2 text-slate-300 font-semibold md:pl-32 mt-5">
+      <h1 class="hover:text-black">Home</h1>
+      <i class="fa-solid fa-angle-right p-1"></i>
+      <h1 class="hover:text-black">Catalog</h1>
+      <i class="fa-solid fa-angle-right p-1"></i>
+      <h1 class="hover:text-black">Smartphones</h1>
+    </div>
+
+    <div class="ml-3 flex gap-[100px]">
+      <aside class="border-r shadow-lg w-[430px]">
+        <div class="flex justify-between md:w-[200px] border-b mt-16 md:ml-32">
+          <h1 class="text-2xl font-semibold">Brand</h1>
+          <i class="fa-solid fa-angle-up"></i>
+        </div>
+
+        <div>
+          <input
+            type="search"
+            class="border mt-4 p-3 rounded-lg bg-slate-100 md:ml-32"
+            placeholder="search"
+          />
+        </div>
+
+        <div class="md:ml-32 mt-5">
+          <div class="flex gap-2">
+            <input type="checkbox" />
+            <h1 class="font-semibold md:text-[19px]">Apple</h1>
+            <p class="text-slate-300 font-semibold">110</p>
+          </div>
+          <div class="flex gap-2 mt-2">
+            <input type="checkbox" />
+            <h1 class="font-semibold md:text-[19px]">Samsung</h1>
+            <p class="text-slate-300 font-semibold">125</p>
+          </div>
+          <div class="flex gap-2 mt-2">
+            <input type="checkbox" />
+            <h1 class="font-semibold md:text-[19px]">Xiaomi</h1>
+            <p class="text-slate-300 font-semibold">68</p>
+          </div>
+          <div class="flex gap-2 mt-2">
+            <input type="checkbox" />
+            <h1 class="font-semibold md:text-[19px]">Poco</h1>
+            <p class="text-slate-300 font-semibold">44</p>
+          </div>
+          <div class="flex gap-2 mt-2">
+            <input type="checkbox" />
+            <h1 class="font-semibold md:text-[19px]">OPPO</h1>
+            <p class="text-slate-300 font-semibold">36</p>
+          </div>
+          <div class="flex gap-2 mt-2">
+            <input type="checkbox" />
+            <h1 class="font-semibold md:text-[19px]">Apple</h1>
+            <p class="text-slate-300 font-semibold">110</p>
+          </div>
+          <div class="flex gap-2 mt-2">
+            <input type="checkbox" />
+            <h1 class="font-semibold md:text-[19px]">Honor</h1>
+            <p class="text-slate-300 font-semibold">10</p>
+          </div>
+          <div class="flex gap-2 mt-2">
+            <input type="checkbox" />
+            <h1 class="font-semibold md:text-[19px]">Motorola</h1>
+            <p class="text-slate-300 font-semibold">34</p>
+          </div>
+          <div class="flex gap-2 mt-2">
+            <input type="checkbox" />
+            <h1 class="font-semibold md:text-[19px]">Realme</h1>
+            <p class="text-slate-300 font-semibold">35</p>
+          </div>
+        </div>
+        <div
+          class="font-semibold text-2xl md:w-[210px] p-3 border-b gap-8 md:ml-32 mt-5"
+        >
+          <select name="" id="">
+            <option value="">Battery Capacity</option>
+          </select>
+        </div>
+        <div
+          class="font-semibold text-2xl md:w-[210px] p-3 border-b gap-8 md:ml-32 mt-5"
+        >
+          <select name="" id="">
+            <option value="">Screen type</option>
+          </select>
+        </div>
+        <div
+          class="font-semibold text-2xl md:w-[210px] p-3 border-b gap-8 md:ml-32 mt-5"
+        >
+          <select name="" id="">
+            <option value="">Screen diagonal</option>
+          </select>
+        </div>
+        <div
+          class="font-semibold text-2xl md:w-[210px] p-3 border-b gap-8 md:ml-32 mt-5"
+        >
+          <select name="" id="">
+            <option value="">Protection class</option>
+          </select>
+        </div>
+        <div
+          class="font-semibold text-2xl md:w-[210px] p-3 border-b gap-8 md:ml-32 mt-5"
+        >
+          <select name="" id="">
+            <option value="">Built-in memory</option>
+          </select>
+        </div>
+      </aside>
+      <div class="">
+        <!--  top navbar -->
+        <div class="mt-16 flex gap-[300px]">
+          <div class="flex">
+            <h1 class="text-[15px] font-semibold text-slate-300">
+              Selected Products:
+            </h1>
+            <p class="text-[15px] font-semibold">83</p>
+          </div>
+
+          <div
+            class="text-[13px] p-2 font-semibold border w-[140px] rounded-lg text-slate-300"
+          >
+            <select name="" id="">
+              <option value="">By Rating</option>
+            </select>
+          </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-5">
+          <!-- PRODUCTS GRID -->
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-[60px] mt-5 justify-items-center"
+            id="productGrid"
+          >
+            <!-- CARD 1 -->
+            <div
+              class="product-card border bg-slate-100 relative w-[250px] rounded-lg shadow-lg text-center p-5"
+            >
+              <img src="/img/Iphone 14 pro 1uy.png" alt="" />
+              <p class="font-semibold mt-4 text-[15px]">
+                Apple iPhone 14 Pro 512GB Gold (MQ233)
+              </p>
+              <h1 class="font-semibold mt-3">$1437</h1>
+              <button
+                class="px-7 mt-3 rounded-lg py-2 bg-black text-white hover:bg-gray-300 hover:text-black"
+              >
+                Buy Now
+              </button>
+              <i
+                class="fa-solid fa-heart absolute top-2 right-2 text-gray-400 hover:text-red-700"
+              ></i>
+            </div>
+
+            <!-- CARD 2 -->
+            <div
+              class="product-card border bg-slate-100 relative w-[250px] rounded-lg shadow-lg text-center p-5"
+            >
+              <img src="/img/Iphone 14 pro 1 (2).png" alt="" />
+              <p class="font-semibold mt-4 text-[15px]">
+                AirPods Max Silver Starlight Aluminium
+              </p>
+              <h1 class="font-semibold mt-3">$549</h1>
+              <button
+                class="px-7 mt-3 rounded-lg py-2 bg-black text-white hover:bg-gray-300 hover:text-black"
+              >
+                Buy Now
+              </button>
+              <i
+                class="fa-solid fa-heart absolute top-2 right-2 text-gray-400 hover:text-red-700"
+              ></i>
+            </div>
+
+            <!-- CARD 3 -->
+            <div
+              class="product-card border bg-slate-100 relative w-[250px] rounded-lg shadow-lg text-center p-5"
+            >
+              <img src="/img/Iphone 14 pro 1 (8).png" alt="" />
+              <p class="font-semibold mt-4 text-[15px]">
+                Apple Watch Series 9 GPS 41mm Starlight Aluminium
+              </p>
+              <h1 class="font-semibold mt-3">$399</h1>
+              <button
+                class="px-7 mt-3 rounded-lg py-2 bg-black text-white hover:bg-gray-300 hover:text-black"
+              >
+                Buy Now
+              </button>
+              <i
+                class="fa-solid fa-heart absolute top-2 right-2 text-gray-400 hover:text-red-700"
+              ></i>
+            </div>
+
+            <!-- DUPLICATES (same structure, for pagination demo) -->
+            <div
+              class="product-card border bg-slate-100 relative w-[250px] rounded-lg shadow-lg text-center p-5"
+            >
+              <img src="/img/Iphone 14 pro 1uy.png" alt="" />
+              <p class="font-semibold mt-4 text-[15px]">
+                Apple iPhone 14 Pro 512GB Gold (MQ233)
+              </p>
+              <h1 class="font-semibold mt-3">$1437</h1>
+              <button
+                class="px-7 mt-3 rounded-lg py-2 bg-black text-white hover:bg-gray-300 hover:text-black"
+              >
+                Buy Now
+              </button>
+              <i
+                class="fa-solid fa-heart absolute top-2 right-2 text-gray-400 hover:text-red-700"
+              ></i>
+            </div>
+
+            <div
+              class="product-card border bg-slate-100 relative w-[250px] rounded-lg shadow-lg text-center p-5"
+            >
+              <img src="/img/Iphone 14 pro 1 (2).png" alt="" />
+              <p class="font-semibold mt-4 text-[15px]">
+                AirPods Max Silver Starlight Aluminium
+              </p>
+              <h1 class="font-semibold mt-3">$549</h1>
+              <button
+                class="px-7 mt-3 rounded-lg py-2 bg-black text-white hover:bg-gray-300 hover:text-black"
+              >
+                Buy Now
+              </button>
+              <i
+                class="fa-solid fa-heart absolute top-2 right-2 text-gray-400 hover:text-red-700"
+              ></i>
+            </div>
+
+            <div
+              class="product-card border bg-slate-100 relative w-[250px] rounded-lg shadow-lg text-center p-5"
+            >
+              <img src="/img/Iphone 14 pro 1 (8).png" alt="" />
+              <p class="font-semibold mt-4 text-[15px]">
+                Apple Watch Series 9 GPS 41mm Starlight Aluminium
+              </p>
+              <h1 class="font-semibold mt-3">$399</h1>
+              <button
+                class="px-7 mt-3 rounded-lg py-2 bg-black text-white hover:bg-gray-300 hover:text-black"
+              >
+                Buy Now
+              </button>
+              <i
+                class="fa-solid fa-heart absolute top-2 right-2 text-gray-400 hover:text-red-700"
+              ></i>
+            </div>
+          </div>
+
+          <!-- PAGINATION -->
+          <div class="flex justify-center mt-10 gap-3" id="pagination">
+            <button class="page-btn active">1</button>
+            <button class="page-btn">2</button>
+            <button class="page-btn">3</button>
+            <button class="page-btn">4</button>
+            <button class="page-btn">5</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="bg-black flex justify-center pt-10 md:gap-28 gap-3 md:h-[470px] text-white p-7 md:p-5 md:w-[1264px]"
+    >
+      <div class="">
+        <h1 class="font-bold md:text-[19px] text-[19px]">Cyber</h1>
+        <p
+          class="md:w-[350px] w-[120px] text-[10px] font-semibold text-slate-400 md:text-[14px] mt-5"
+        >
+          We are a residential interior design firm located in Portland. Our
+          boutique-studio offers more than
+        </p>
+        <img src="/image/Social Icons.png" class="mt-[200px]" alt="" />
+      </div>
+
+      <div>
+        <h1 class="font-bold md:text-[19px] text-[19px]">Services</h1>
+        <h1
+          class="mt-2 font-semibold md:text-[13px] text-[10px] text-slate-400 hover:bg-slate-300 hover:text-black p-2 rounded-lg"
+        >
+          Bonus program
+        </h1>
+        <h1
+          class="mt-2 font-semibold md:text-[13px] text-[10px] text-slate-400 hover:bg-slate-300 hover:text-black p-2 rounded-lg"
+        >
+          Gift cards
+        </h1>
+        <h1
+          class="mt-2 font-semibold md:text-[13px] text-[10px] text-slate-400 hover:bg-slate-300 hover:text-black p-2 rounded-lg"
+        >
+          Credit and payment
+        </h1>
+        <h1
+          class="mt-2 font-semibold md:text-[13px] text-[10px] text-slate-400 hover:bg-slate-300 hover:text-black p-2 rounded-lg"
+        >
+          Service contracts
+        </h1>
+        <h1
+          class="mt-2 font-semibold md:text-[13px] text-[10px] text-slate-400 hover:bg-slate-300 hover:text-black p-2 rounded-lg"
+        >
+          Non-cash account
+        </h1>
+        <h1
+          class="mt-2 font-semibold md:text-[13px] text-[10px] text-slate-400 hover:bg-slate-300 hover:text-black p-2 rounded-lg"
+        >
+          Payment
+        </h1>
+      </div>
+
+      <div>
+        <h1 class="font-bold md:text-[19px] text-[19px]">
+          Assistance to the buyer
+        </h1>
+
+        <h1
+          class="mt-2 font-semibold md:text-[13px] text-[10px] text-slate-400 hover:bg-slate-300 hover:text-black p-2 rounded-lg"
+        >
+          Find an order
+        </h1>
+        <h1
+          class="mt-2 font-semibold md:text-[13px] text-[10px] text-slate-400 hover:bg-slate-300 hover:text-black p-2 rounded-lg"
+        >
+          Terms of delivery
+        </h1>
+        <h1
+          class="mt-2 font-semibold md:text-[13px] text-[10px] text-slate-400 hover:bg-slate-300 hover:text-black p-2 rounded-lg"
+        >
+          Exchange and return of goods
+        </h1>
+        <h1
+          class="mt-2 font-semibold md:text-[13px] text-slate-400 text-[10px] hover:bg-slate-300 hover:text-black p-2 rounded-lg"
+        >
+          Guarantee
+        </h1>
+        <h1
+          class="mt-2 font-semibold md:text-[13px] text-[10px] text-slate-400 hover:bg-slate-300 hover:text-black p-2 rounded-lg"
+        >
+          Frequently asked questions
+        </h1>
+        <h1
+          class="mt-2 font-semibold md:text-[13px] text-[10px] text-slate-400 hover:bg-slate-300 hover:text-black p-2 rounded-lg"
+        >
+          Terms of use of the site
+        </h1>
+      </div>
+    </div>
+
+    <script>
+      const cards = document.querySelectorAll(".product-card");
+      const buttons = document.querySelectorAll(".page-btn");
+      const itemsPerPage = 6;
+
+      function showPage(page) {
+        cards.forEach((card, index) => {
+          card.style.display =
+            index >= (page - 1) * itemsPerPage && index < page * itemsPerPage
+              ? "block"
+              : "none";
+        });
+
+        buttons.forEach((btn) => btn.classList.remove("active"));
+        buttons[page - 1].classList.add("active");
+      }
+
+      buttons.forEach((btn, index) => {
+        btn.addEventListener("click", () => showPage(index + 1));
+      });
+
+      showPage(1);
+    </script>
+  </body>
+</html>
