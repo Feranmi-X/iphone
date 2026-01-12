@@ -520,6 +520,27 @@
     // Close filter panel on mobile after applying
     mobileFilter.classList.add("hidden");
   });
+  const cards = document.querySelectorAll(".product-card");
+      const buttons = document.querySelectorAll(".page-btn");
+      const itemsPerPage = 6;
+
+      function showPage(page) {
+        cards.forEach((card, index) => {
+          card.style.display =
+            index >= (page - 1) * itemsPerPage && index < page * itemsPerPage
+              ? "block"
+              : "none";
+        });
+
+        buttons.forEach((btn) => btn.classList.remove("active"));
+        buttons[page - 1].classList.add("active");
+      }
+
+      buttons.forEach((btn, index) => {
+        btn.addEventListener("click", () => showPage(index + 1));
+      });
+
+      showPage(1);
 </script>
   </body>
 </html>
